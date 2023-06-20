@@ -1,0 +1,127 @@
+$normalPadding: 1rem;
+
+.normal {
+  height: 100px;
+  background-color: #1e568f;
+}
+
+.shrink {
+  height: 75px;
+  background-color: #1e578fe1;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: #eee;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  transition: all 300ms;
+}
+
+.titleBox {
+  padding: $normalPadding;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.navigator {
+  padding: $normalPadding;
+  font-family: Arial, Helvetica, sans-serif;
+
+  &__list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    &__item {
+      padding: $normalPadding;
+      a {
+        height: 50px;
+        width: 80px;
+        transition: all 300ms;
+        font-weight: 500;
+        &:hover {
+          color: #222;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+  @media (max-width: 950px) {
+    display: none;
+  }
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  background-color: transparent;
+  gap: 9.35px;
+  border: none;
+  cursor: pointer;
+  &__line {
+    background: white;
+    height: 3px;
+    width: 100%;
+    transition: all 300ms;
+    transform-origin: left;
+  }
+
+  &__open {
+    div:first-child {
+      transform: rotate(45deg);
+    }
+    div:nth-child(2) {
+      opacity: 0;
+    }
+    div:last-child {
+      transform: rotate(-45deg);
+    }
+  }
+
+  @media (max-width: 950px) {
+    display: flex;
+  }
+}
+
+.responsiveMenu {
+  position: fixed;
+  top: -250px;
+  padding: $normalPadding;
+  background-color: #1e578ff3;
+  color: #eee;
+  height: 250px;
+  width: 100vw;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: all 300ms;
+  display: none;
+
+  &__scrolled {
+    top: 75px;
+  }
+
+  &__open {
+    top: 100px;
+  }
+
+  &__list {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+  }
+
+  @media (max-width: 950px) {
+    display: block;
+  }
+}
