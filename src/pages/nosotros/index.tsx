@@ -1,6 +1,9 @@
 import Head from "next/head";
 import { Header } from "@/components/Header/Header";
 import { Footer } from "@/components/Footer/Footer";
+import styles from "../../styles/Nosotros.module.scss";
+import data from "../../../data/presentation.json";
+import Presentation from "@/components/Presentation/Presentation";
 
 export const sobreNosotros = () => {
   return (
@@ -12,8 +15,14 @@ export const sobreNosotros = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main>
-        <h1>SOBRE NOSOTROS</h1>
+      <main className={styles.mainContainer}>
+        <img
+          src="portadas/nosotros.jpg"
+          alt="Equipo Navarro Rehabilitación de Edificios"
+          max-width="1200"
+          className={styles.mainContainer__portrait}
+        />
+        <Presentation data={data.nosotros} />
       </main>
       <Footer />
     </>

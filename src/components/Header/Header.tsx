@@ -5,8 +5,6 @@ export const Header = () => {
   const [hamburger, setHamburger] = useState(false);
   const [scroll, setScroll] = useState(false);
   const toggleHamburger = () => {
-    console.log(hamburger);
-
     setHamburger(!hamburger);
   };
   if (typeof window !== "undefined") {
@@ -29,7 +27,7 @@ export const Header = () => {
       >
         <div className={styles.titleBox}>
           <h1 className={styles.titleBox__title}>NAVARRO</h1>
-          <h2 className={styles.titleBox__subTitle}>
+          <h2 className={styles.titleBox__subtitle}>
             Rehabilitación de Edificios
           </h2>
         </div>

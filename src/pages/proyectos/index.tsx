@@ -1,6 +1,8 @@
 import Head from "next/head";
 import { Header } from "@/components/Header/Header";
 import { Footer } from "@/components/Footer/Footer";
+import Presentation from "@/components/Presentation/Presentation";
+import data from "../../../data/presentation.json";
 
 export const proyectosRealizados = () => {
   return (
@@ -13,7 +15,7 @@ export const proyectosRealizados = () => {
       </Head>
       <Header />
       <main>
-        <h1>PROYECTOS REALIZADOS</h1>
+        <Presentation data={data.proyectos} />
       </main>
       <Footer />
     </>

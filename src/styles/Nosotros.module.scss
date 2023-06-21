@@ -1,0 +1,9 @@
+.mainContainer {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+
+  &__portrait {
+    width: auto;
+  }
+}
