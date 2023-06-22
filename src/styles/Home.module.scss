@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 10px;
+  padding-top: 0px;
 }
 
 .homeGallery {
@@ -74,6 +74,58 @@
       margin: 10px;
       span {
         margin: 7px auto;
+      }
+    }
+  }
+}
+
+.carousel {
+  width: 100vw;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 50vw;
+  transition: all 300ms ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  @media (max-width: 600px) {
+    width: 100vw;
+  }
+
+  &__title {
+    font-size: 35px;
+    font-weight: 600;
+    color: #222;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    padding: 5px 15px;
+    border-radius: 5px;
+
+    @media (max-width: 700px) {
+      font-size: 25px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      border: none;
+      background-color: #1e578fe5;
+      color: #eee;
+      width: 50px;
+      height: 50px;
+      font-size: 30px;
+      &:hover {
+        cursor: pointer;
       }
     }
   }
