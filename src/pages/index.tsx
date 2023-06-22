@@ -5,6 +5,7 @@ import styles from "../styles/Home.module.scss";
 import presentationData from "../../data/presentation.json";
 import servicesData from "../../data/services";
 import Presentation from "@/components/Presentation/Presentation";
+import galleryImagesData from "../../data/homeGallery";
 
 export default function Home() {
   return (
@@ -18,27 +19,11 @@ export default function Home() {
       <Header />
       <main className={`${styles.mainContainer}`}>
         <section className={`${styles.homeGallery}`}>
-          <img
-            src="/home-gallery/IMAG1589.jpg"
-            alt="edificio rojo"
-            height="500"
-          />
-          <img
-            src="/home-gallery/Imagen-principal-perfil-de-la-noticia-Bloques-de-viviendas-rehabilitados.jpg"
-            alt="edificio gris"
-            height="500"
-          />
-          <img
-            src="/home-gallery/New Projecdddddt.jpg"
-            alt="andamio eléctrico"
-            height="500"
-          />
-          <img src="/home-gallery/New Project.jpg" alt="andamio" height="500" />
-          <img
-            src="/home-gallery/Paramento impermeabilizado con Sistema ONDUCLAIR PC COLOR MARFIL.jpg"
-            alt="impermeabilización"
-            height="500"
-          />
+          {galleryImagesData.map((image, index) => {
+            return (
+              <img src={image.src} alt={image.alt} height="500" key={index} />
+            );
+          })}
         </section>
         <Presentation data={presentationData.inicio} />
         <section className={`${styles.servicios}`}>

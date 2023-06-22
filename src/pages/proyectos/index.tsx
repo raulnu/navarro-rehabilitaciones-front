@@ -3,6 +3,8 @@ import { Header } from "@/components/Header/Header";
 import { Footer } from "@/components/Footer/Footer";
 import Presentation from "@/components/Presentation/Presentation";
 import data from "../../../data/presentation.json";
+import styles from "../../styles/Proyectos.module.scss";
+import galleryData from "../../../data/projectsGallery";
 
 export const proyectosRealizados = () => {
   return (
@@ -14,8 +16,13 @@ export const proyectosRealizados = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main>
+      <main className={styles.mainContainer}>
         <Presentation data={data.proyectos} />
+        <section className={`${styles.projectsGallery}`}>
+          {galleryData.map((img, index) => {
+            return <img src={img.src} alt={img.alt} key={index} width="500" />;
+          })}
+        </section>
       </main>
       <Footer />
     </>

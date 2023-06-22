@@ -17,7 +17,7 @@ export const sobreNosotros = () => {
       <Header />
       <main className={styles.mainContainer}>
         <img
-          src="portadas/nosotros.jpg"
+          src="portadas/nosotros1.jpg"
           alt="Equipo Navarro Rehabilitación de Edificios"
           max-width="1200"
           className={styles.mainContainer__portrait}
