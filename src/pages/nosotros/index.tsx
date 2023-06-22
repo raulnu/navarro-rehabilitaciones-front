@@ -19,7 +19,7 @@ export const sobreNosotros = () => {
         <img
           src="portadas/nosotros1.jpg"
           alt="Equipo Navarro Rehabilitación de Edificios"
-          max-width="1200"
+          width="90%"
           className={styles.mainContainer__portrait}
         />
         <Presentation data={data.nosotros} />
