@@ -10,6 +10,7 @@ import galleryImagesData from "../../data/homeGallery";
 import homeCarousel from "../../data/homeCarousel";
 
 export default function Home() {
+  // Carousel image counter
   const [carouselCounter, setCarouselCounter] = useState(1);
   const handleCarouselCounterModifier = (operation: string) => {
     if (operation === "add") {
@@ -18,6 +19,7 @@ export default function Home() {
       setCarouselCounter(carouselCounter - 1);
     }
   };
+
   return (
     <>
       <Head>
@@ -65,7 +67,7 @@ export default function Home() {
           })}
         </section>
         <Presentation data={presentationData.inicio} />
-        <section className={`${styles.servicios}`}>
+        <section className={`${styles.servicios} `}>
           {servicesData.map((service, articleIndex) => {
             return (
               <article
@@ -104,6 +106,7 @@ export default function Home() {
             <button>VER MÁS PROYECTOS</button>
           </a>
         </section>
+        <div>holi</div>
       </main>
       <Footer />
     </>
