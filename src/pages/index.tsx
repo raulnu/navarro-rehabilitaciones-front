@@ -6,24 +6,16 @@ import styles from "../styles/Home.module.scss";
 import presentationData from "../../data/presentation.json";
 import servicesData from "../../data/services";
 import Presentation from "@/components/Presentation/Presentation";
-// import galleryImagesData from "../../data/homeGallery";
+import galleryImagesData from "../../data/homeGallery";
 import homeCarousel from "../../data/homeCarousel";
 
 export default function Home() {
-  const [carouselCounter, setCarouselCounter] = useState(0);
+  const [carouselCounter, setCarouselCounter] = useState(1);
   const handleCarouselCounterModifier = (operation: string) => {
     if (operation === "add") {
-      if (carouselCounter === 2) {
-        setCarouselCounter(0);
-      } else {
-        setCarouselCounter(carouselCounter + 1);
-      }
+      setCarouselCounter(carouselCounter + 1);
     } else {
-      if (carouselCounter === 0) {
-        setCarouselCounter(2);
-      } else {
-        setCarouselCounter(carouselCounter - 1);
-      }
+      setCarouselCounter(carouselCounter - 1);
     }
   };
   return (
@@ -36,30 +28,41 @@ export default function Home() {
       </Head>
       <Header />
       <main className={`${styles.mainContainer}`}>
-        {/* <section className={`${styles.homeGallery}`}>
-          {galleryImagesData.map((image, index) => {
+        <section
+          className={`${styles.carousel} ${
+            carouselCounter === 0 ? styles.leftPortrait : ""
+          } ${carouselCounter === 1 && styles.centerPortrait} 
+          ${carouselCounter === 2 ? styles.rightPortrait : ""}`}
+        >
+          {homeCarousel.map((image, index) => {
             return (
-              <img src={image.src} alt={image.alt} height="500" key={index} />
+              <div
+                className={styles.carousel__item}
+                key={index}
+                style={{ backgroundImage: `url(${image.src})` }}
+              >
+                <span className={styles.carousel__item__title}>
+                  {image.title}
+                </span>
+                <div className={styles.carousel__item__buttons}>
+                  <button
+                    onClick={() => handleCarouselCounterModifier("substract")}
+                    disabled={carouselCounter === 0}
+                    className={carouselCounter === 0 ? styles.disabled : ""}
+                  >
+                    {"<"}
+                  </button>
+                  <button
+                    onClick={() => handleCarouselCounterModifier("add")}
+                    disabled={carouselCounter === 2}
+                    className={carouselCounter === 2 ? styles.disabled : ""}
+                  >
+                    {">"}
+                  </button>
+                </div>
+              </div>
             );
           })}
-        </section> */}
-        <section
-          className={`${styles.carousel}`}
-          style={{
-            backgroundImage: `url(${homeCarousel[carouselCounter].src})`,
-          }}
-        >
-          <span className={styles.carousel__title}>
-            {homeCarousel[carouselCounter].title}
-          </span>
-          <div className={styles.carousel__buttons}>
-            <button onClick={() => handleCarouselCounterModifier("substract")}>
-              {"<"}
-            </button>
-            <button onClick={() => handleCarouselCounterModifier("add")}>
-              {">"}
-            </button>
-          </div>
         </section>
         <Presentation data={presentationData.inicio} />
         <section className={`${styles.servicios}`}>
@@ -86,6 +89,20 @@ export default function Home() {
               </article>
             );
           })}
+        </section>
+        <section className={`${styles.homeGallery}`}>
+          <h4 className={styles.homeGallery__title}>NUESTROS PROYECTOS</h4>
+          <div className={styles.homeGallery__images}>
+            {galleryImagesData.map((image, index) => {
+              return (
+                <img src={image.src} alt={image.alt} height="500" key={index} />
+              );
+            })}
+          </div>
+
+          <a href="/proyectos" className={styles.homeGallery__link}>
+            <button>VER MÁS PROYECTOS</button>
+          </a>
         </section>
       </main>
       <Footer />

@@ -9,7 +9,7 @@ export const Footer = ({ page }: IProps) => {
         }`}
       >
         {page !== "contacto" && (
-          <>
+          <section className={styles.footer__info}>
             <div>
               <img
                 src="contact-icons/icons8-phone-50.png"
@@ -47,10 +47,12 @@ export const Footer = ({ page }: IProps) => {
                 Llobregat (BCN)
               </a>
             </div>
-          </>
+          </section>
         )}
 
-        <span>Restauraciones Navarro &copy; {new Date().getFullYear()}</span>
+        <section className={styles.footer__copyRight}>
+          <span>Restauraciones Navarro &copy; {new Date().getFullYear()}</span>
+        </section>
       </footer>
     </>
   );

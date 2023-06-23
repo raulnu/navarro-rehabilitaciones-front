@@ -1,14 +1,23 @@
 const homeGallery: IGalleryImage[] = [
-  { src: "/home-gallery/IMAG1589.jpg", alt: "edificio rojo" },
   {
-    src: "/home-gallery/Imagen-principal-perfil-de-la-noticia-Bloques-de-viviendas-rehabilitados.jpg",
-    alt: "edificio gris",
+    src: "/home-gallery/edifici_blanc_treball_vertical.jpeg",
+    alt: "Edificio blanco trabajo vertical",
   },
-  { src: "/home-gallery/New Projecdddddt.jpg", alt: "andamio eléctrico" },
-  { src: "/home-gallery/New Project.jpg", alt: "andamio" },
   {
-    src: "/home-gallery/Paramento impermeabilizado con Sistema ONDUCLAIR PC COLOR MARFIL.jpg",
-    alt: "impermeabilización",
+    src: "/home-gallery/edifici_blanc-e1683048403441.jpeg",
+    alt: "Edificio blanco",
+  },
+  {
+    src: "/home-gallery/edifici_marro_blanc-e1683048315790.jpeg",
+    alt: "Edificio marron y blanco",
+  },
+  {
+    src: "/home-gallery/edifici_marro_embastida-e1683048174375.jpeg",
+    alt: "Edificio marron bastida",
+  },
+  {
+    src: "/home-gallery/pared_fluvial.jpeg",
+    alt: "Instalación de pared fluvial",
   },
 ];
 

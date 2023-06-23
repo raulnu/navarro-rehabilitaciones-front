@@ -8,45 +8,74 @@
 
 .homeGallery {
   display: flex;
-  width: 80vw;
-  height: 500px;
-  img {
-    width: 0px;
-    flex-grow: 1;
-    object-fit: cover;
-    opacity: 0.8;
-    transition: all 300ms ease;
-    height: 100%;
+  flex-direction: column;
+  align-items: center;
+  margin: 75px auto;
+  font-family: Helvetica, sans-serif;
 
+  &__title {
+    margin: 15px auto;
+    font-size: 25px;
+    margin-bottom: 25px;
+  }
+
+  &__images {
+    display: flex;
+    width: 80vw;
+    height: 500px;
+    margin-bottom: 50px;
     @media (max-width: 600px) {
-      width: 100%;
-      height: 0px;
+      flex-direction: column;
+      width: 90vw;
+      height: 700px;
     }
+    img {
+      width: 0px;
+      flex-grow: 1;
+      object-fit: cover;
+      opacity: 0.8;
+      transition: all 300ms ease;
+      height: 100%;
 
-    &:hover {
-      cursor: crosshair;
-      width: 300px;
-      opacity: 1;
-      filter: contrast(120%);
       @media (max-width: 600px) {
         width: 100%;
-        height: 250px;
+        height: 0px;
+      }
+
+      &:hover {
+        cursor: crosshair;
+        width: 300px;
+        opacity: 1;
+        filter: contrast(120%);
+        @media (max-width: 600px) {
+          width: 100%;
+          height: 400px;
+        }
       }
     }
   }
 
-  @media (max-width: 600px) {
-    flex-direction: column;
-    width: 90vw;
-    height: 500px;
+  &__link {
+    button {
+      border-radius: 5px;
+      color: #eee;
+      padding: 15px 30px;
+      font-size: 20px;
+      border: none;
+      cursor: pointer;
+      min-width: 100%;
+      height: 100%;
+      background-color: #1e578fe5;
+    }
   }
 }
 
 .servicios {
-  width: 100%;
+  width: 100vw;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   font-family: Helvetica, sans-serif;
+  background-color: #1e578fca;
 
   @media (max-width: 600px) {
     flex-direction: column;
@@ -56,8 +85,7 @@
   &__article {
     text-align: center;
     width: 200px;
-    margin: 20px auto;
-
+    margin: 20px 5vw;
     img {
       border-radius: 15px;
     }
@@ -80,53 +108,69 @@
 }
 
 .carousel {
-  width: 100vw;
-  text-align: center;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 50vw;
-  transition: all 300ms ease;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  @media (max-width: 600px) {
+  &__item {
     width: 100vw;
-  }
-
-  &__title {
-    font-size: 35px;
-    font-weight: 600;
-    color: #222;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-      sans-serif;
-    padding: 5px 15px;
-    border-radius: 5px;
-
-    @media (max-width: 700px) {
-      font-size: 25px;
-    }
-  }
-
-  &__buttons {
+    height: 50vw;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 300ms ease;
     display: flex;
-    justify-content: space-between;
-    width: 90%;
-    button {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    &__title {
+      font-size: 35px;
+      height: 100px;
+      font-weight: 600;
+      color: #222;
+      font-family: Calibri, "Trebuchet MS", sans-serif;
+      padding: 5px 15px;
+      border-radius: 5px;
+
+      @media (max-width: 700px) {
+        font-size: 25px;
+      }
+    }
+
+    &__buttons {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 50%;
-      border: none;
-      background-color: #1e578fe5;
-      color: #eee;
-      width: 50px;
-      height: 50px;
-      font-size: 30px;
-      &:hover {
-        cursor: pointer;
+      justify-content: space-between;
+      width: 90%;
+      button {
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        border: none;
+        background-color: #1e578fe5;
+        color: #eee;
+        width: 50px;
+        height: 50px;
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
   }
+}
+
+.leftPortrait {
+  transform: translateX(100vw);
+  transition: all 500ms ease-out;
+}
+.centerPortrait {
+  transform: translateX(0vw);
+  transition: all 500ms ease;
+}
+.rightPortrait {
+  transform: translateX(-100vw);
+  transition: all 500ms ease;
+}
+
+.disabled {
+  opacity: 0.5;
 }
