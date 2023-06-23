@@ -106,7 +106,6 @@ export default function Home() {
             <button>VER MÁS PROYECTOS</button>
           </a>
         </section>
-        <div>holi</div>
       </main>
       <Footer />
     </>
