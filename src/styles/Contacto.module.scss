@@ -35,8 +35,5 @@
 .map {
   border: 0;
   padding-bottom: 25px;
-
-  @media (max-width: 650px) {
-    width: 300px;
-  }
+  width: 85vw;
 }
