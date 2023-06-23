@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Header } from "@/components/Header/Header";
 import { Footer } from "@/components/Footer/Footer";
 import styles from "../styles/Home.module.scss";
@@ -19,6 +19,29 @@ export default function Home() {
       setCarouselCounter(carouselCounter - 1);
     }
   };
+
+  // Function to animate Services when it is in the viewport
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handleAnimation = () => {
+    const element = document.querySelector(`.${styles.servicios}`);
+    if (element !== null) {
+      const elementPosition = element.getBoundingClientRect().top;
+      const screenPosition = window.innerHeight / 1.3;
+      if (elementPosition < screenPosition) {
+        setIsVisible(true);
+      }
+    }
+  };
+
+  // Execute function every time the user scrolls
+  useEffect(() => {
+    window.addEventListener("scroll", handleAnimation);
+    console.log(isVisible);
+    return () => {
+      window.removeEventListener("scroll", handleAnimation);
+    };
+  }, [isVisible]);
 
   return (
     <>
@@ -67,30 +90,36 @@ export default function Home() {
           })}
         </section>
         <Presentation data={presentationData.inicio} />
-        <section className={`${styles.servicios} `}>
-          {servicesData.map((service, articleIndex) => {
-            return (
-              <article
-                className={`${styles.servicios__article}`}
-                key={articleIndex}
-              >
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  height="150"
-                  width="150"
-                />
-                <h4 className={`${styles.servicios__article__title}`}>
-                  {service.title}
-                </h4>
-                <div className={`${styles.servicios__article__box}`}>
-                  {service.items.map((item, spanIndex) => {
-                    return <span key={spanIndex}>{item}</span>;
-                  })}
-                </div>
-              </article>
-            );
-          })}
+        <section className={`${styles.servicios}`}>
+          <div
+            className={`${styles.servicios__container}  ${
+              isVisible ? styles.showServices : ""
+            }`}
+          >
+            {servicesData.map((service, articleIndex) => {
+              return (
+                <article
+                  className={`${styles.servicios__article}`}
+                  key={articleIndex}
+                >
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    height="150"
+                    width="150"
+                  />
+                  <h4 className={`${styles.servicios__article__title}`}>
+                    {service.title}
+                  </h4>
+                  <div className={`${styles.servicios__article__box}`}>
+                    {service.items.map((item, spanIndex) => {
+                      return <span key={spanIndex}>{item}</span>;
+                    })}
+                  </div>
+                </article>
+              );
+            })}
+          </div>
         </section>
         <section className={`${styles.homeGallery}`}>
           <h4 className={styles.homeGallery__title}>NUESTROS PROYECTOS</h4>
