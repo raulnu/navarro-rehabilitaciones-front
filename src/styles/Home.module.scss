@@ -165,7 +165,7 @@ $primary-color: #378aae;
         border-radius: 50%;
         border: none;
         background-color: $primary-color;
-        opacity: 0.8;
+        opacity: 0.85;
         color: #eee;
         width: 50px;
         transition: all 300ms ease;
@@ -193,7 +193,7 @@ $primary-color: #378aae;
 }
 
 .disabled {
-  opacity: 0.5;
+  opacity: 0.5 !important;
 }
 
 .showServices {
