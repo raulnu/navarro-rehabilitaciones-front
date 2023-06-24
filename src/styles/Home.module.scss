@@ -1,9 +1,12 @@
+$primary-color: #378aae;
+
 .mainContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding-top: 0px;
+  font-family: "Raleway", sans-serif;
 }
 
 .homeGallery {
@@ -11,7 +14,7 @@
   flex-direction: column;
   align-items: center;
   margin: 75px auto;
-  font-family: Helvetica, sans-serif;
+  color: #111;
 
   &__title {
     margin: 15px auto;
@@ -65,15 +68,21 @@
       cursor: pointer;
       min-width: 100%;
       height: 100%;
-      background-color: #1e578fe5;
+      background-color: $primary-color;
+      transition: all 300ms ease;
+      opacity: 0.8;
+
+      &:hover {
+        opacity: 1;
+      }
     }
   }
 }
 
 .servicios {
   width: 100vw;
-  font-family: Helvetica, sans-serif;
-  background-color: #1e578fca;
+  color: #222;
+  background-color: #378aaeb1;
   padding: 30px 0;
 
   &__container {
@@ -134,9 +143,8 @@
     &__title {
       font-size: 35px;
       height: 100px;
-      font-weight: 600;
-      color: #222;
-      font-family: Calibri, "Trebuchet MS", sans-serif;
+      font-weight: 700;
+      color: #0b212b;
       padding: 5px 15px;
       border-radius: 5px;
 
@@ -156,11 +164,14 @@
         align-items: center;
         border-radius: 50%;
         border: none;
-        background-color: #1e578fe5;
+        background-color: $primary-color;
+        opacity: 0.8;
         color: #eee;
         width: 50px;
+        transition: all 300ms ease;
         height: 50px;
         &:hover {
+          opacity: 1;
           cursor: pointer;
         }
       }

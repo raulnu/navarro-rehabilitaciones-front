@@ -1,13 +1,14 @@
 $normalPadding: 1rem;
+$primary-color: #378aae;
 
 .normal {
   height: 100px;
-  background-color: #1e568f;
+  background-color: $primary-color;
 }
 
 .shrink {
   height: 75px;
-  background-color: #1e578fda;
+  background-color: #378aaeea;
 }
 
 .header {
@@ -27,7 +28,7 @@ $normalPadding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: sans-serif, Georgia, "Times New Roman", Times, serif;
+  font-family: "Raleway", sans-serif;
   &__title {
     font-size: 32px;
     @media (max-width: 550px) {
@@ -44,7 +45,7 @@ $normalPadding: 1rem;
 
 .navigator {
   padding: $normalPadding;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Raleway", sans-serif;
 
   &__list {
     display: flex;
