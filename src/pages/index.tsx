@@ -94,6 +94,13 @@ export default function Home() {
           })}
         </section>
         <Presentation data={presentationData.inicio} />
+        <a
+          href="/nosotros"
+          className={styles.homeGallery__link}
+          style={{ paddingBottom: "75px", marginTop: "-15px" }}
+        >
+          <button>SOBRE NOSOTROS</button>
+        </a>
         <section className={`${styles.servicios}`}>
           <div
             className={`${styles.servicios__container}  ${
