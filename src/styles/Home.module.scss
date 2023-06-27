@@ -1,4 +1,5 @@
 $primary-color: #378aae;
+$title-font: "Roboto", sans-serif;
 
 .mainContainer {
   display: flex;
@@ -20,6 +21,7 @@ $primary-color: #378aae;
     margin: 15px auto;
     font-size: 25px;
     margin-bottom: 25px;
+    font-family: $title-font;
   }
 
   &__images {
@@ -109,6 +111,7 @@ $primary-color: #378aae;
     &__title {
       margin: 15px auto;
       font-size: 25px;
+      font-family: $title-font;
     }
 
     &__box {
@@ -128,6 +131,7 @@ $primary-color: #378aae;
 
 .carousel {
   display: flex;
+  font-family: $title-font;
   &__item {
     width: 100vw;
     height: 50vw;
